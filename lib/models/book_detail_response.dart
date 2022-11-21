@@ -54,7 +54,7 @@ class BookDetailResponse {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['error'] = this.error;
     data['title'] = this.title;
     data['subtitle'] = this.subtitle;
