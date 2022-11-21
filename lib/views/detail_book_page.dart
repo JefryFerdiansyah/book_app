@@ -5,6 +5,7 @@ import 'package:book_app/models/book_list_response.dart';
 import 'package:book_app/views/image_view_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:url_launcher/url_launcher.dart';
 
 class DetailBookPage extends StatefulWidget {
   const DetailBookPage({super.key, required this.isbn});
@@ -153,8 +154,17 @@ class _DetailBookPageState extends State<DetailBookPage> {
                       style: ElevatedButton.styleFrom(
                           // fixedSize: Size(double.infinity, 50),
                           ),
-                      onPressed: () {},
-                      child: Text("Buy"),
+                      onPressed: () {
+                        print("url");
+                        Uri uri = Uri.parse(detailBook!.url!);
+                        try {
+                          canLaunchUrl(uri);
+                        } catch (e) {
+                          print("error");
+                          print(e);
+                        }
+                      },
+                      child: Text("BUY"),
                     ),
                   ),
                   SizedBox(
