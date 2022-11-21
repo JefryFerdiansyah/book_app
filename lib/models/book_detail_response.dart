@@ -50,28 +50,28 @@ class BookDetailResponse {
     price = json['price'];
     image = json['image'];
     url = json['url'];
-    pdf = json['pdf'] != null ? new Pdf.fromJson(json['pdf']) : null;
+    pdf = json['pdf'] != null ? Pdf.fromJson(json['pdf']) : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['error'] = this.error;
-    data['title'] = this.title;
-    data['subtitle'] = this.subtitle;
-    data['authors'] = this.authors;
-    data['publisher'] = this.publisher;
-    data['language'] = this.language;
-    data['isbn10'] = this.isbn10;
-    data['isbn13'] = this.isbn13;
-    data['pages'] = this.pages;
-    data['year'] = this.year;
-    data['rating'] = this.rating;
-    data['desc'] = this.desc;
-    data['price'] = this.price;
-    data['image'] = this.image;
-    data['url'] = this.url;
-    if (this.pdf != null) {
-      data['pdf'] = this.pdf!.toJson();
+    data['error'] = error;
+    data['title'] = title;
+    data['subtitle'] = subtitle;
+    data['authors'] = authors;
+    data['publisher'] = publisher;
+    data['language'] = language;
+    data['isbn10'] = isbn10;
+    data['isbn13'] = isbn13;
+    data['pages'] = pages;
+    data['year'] = year;
+    data['rating'] = rating;
+    data['desc'] = desc;
+    data['price'] = price;
+    data['image'] = image;
+    data['url'] = url;
+    if (pdf != null) {
+      data['pdf'] = pdf!.toJson();
     }
     return data;
   }
@@ -89,9 +89,9 @@ class Pdf {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['Chapter 2'] = this.chapter2;
-    data['Chapter 5'] = this.chapter5;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['Chapter 2'] = chapter2;
+    data['Chapter 5'] = chapter5;
     return data;
   }
 }
