@@ -1,4 +1,4 @@
-import 'package:book_app/view/book_list_page.dart';
+import 'package:book_app/views/book_list_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

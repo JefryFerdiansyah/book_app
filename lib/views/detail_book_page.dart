@@ -11,8 +11,7 @@ class DetailBookPage extends StatefulWidget {
 class _DetailBookPageState extends State<DetailBookPage> {
   fetchDetailBookApi() async {
     var url = Uri.parse('hhttps://api.itbook.store/1.0/books/9781617294136');
-    var response =
-        await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
+    var response = await http.get(url);
     print('Response status: ${response.statusCode}');
     print('Response body: ${response.body}');
 
